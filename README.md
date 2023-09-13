@@ -44,7 +44,7 @@ THEN I am logged out of the site and presented with a menu with the options Sear
 # Mock-Up
 The following image shows an example of the application deployed in Heroku:
 
-('./public/![Alt text](image.png))
+![App app-boo-search-demo](/client/public/app-boo-search-demo.png)
 
 
 # App Links
