@@ -1,11 +1,19 @@
 import React from 'react';
+import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import SearchBooks from './pages/SearchBooks';
 import SavedBooks from './pages/SavedBooks';
 import Navbar from './components/Navbar';
 
+// Initialize Apollo Client
+const client = new ApolloClient({
+  uri: 'http://localhost:3001/graphql', 
+  cache: new InMemoryCache(),
+});
+
 function App() {
   return (
+    <ApolloProvider client={client}>
     <Router>
       <>
         <Navbar />
@@ -16,7 +24,9 @@ function App() {
         </Switch>
       </>
     </Router>
+    </ApolloProvider>
   );
 }
+
 
 export default App;
